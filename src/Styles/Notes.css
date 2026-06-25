@@ -1,0 +1,476 @@
+/* ========================================
+   NOTES PAGE - ABRI ACADEMY
+   ======================================== */
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* ===== MAIN BOX ===== */
+.main-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px 40px;
+}
+
+/* ========================================
+   NAVBAR (Same as Home)
+   ======================================== */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 206, 209, 0.06);
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00ced1, #008b8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #00ced1, #008b8b);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+nav ul li a:hover {
+    color: #00ced1;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ===== AUTH BUTTONS ===== */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-login {
+    padding: 10px 24px;
+    color: #00ced1;
+    border: 2px solid #00ced1;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-login:hover {
+    background: #00ced1;
+    color: #000000;
+    box-shadow: 0 0 30px rgba(0, 206, 209, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-signup {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #00ced1, #008b8b);
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 206, 209, 0.25);
+    background: linear-gradient(135deg, #00e5e8, #009999);
+}
+
+/* ========================================
+   NOTES HEADER
+   ======================================== */
+.notes-header {
+    text-align: center;
+    padding: 50px 0 40px;
+}
+
+.notes-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ced1, #008b8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+.notes-header p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* ========================================
+   NOTES GRID
+   ======================================== */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0 50px;
+}
+
+/* ===== NOTE CARD ===== */
+.note-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+    border: 1px solid rgba(0, 206, 209, 0.06);
+    border-radius: 20px;
+    padding: 30px 25px 35px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.note-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 206, 209, 0.03), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.note-card:hover::before {
+    opacity: 1;
+}
+
+.note-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 206, 209, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 206, 209, 0.02);
+}
+
+/* Note Icon */
+.note-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Note Title */
+.note-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00ced1;
+    margin-bottom: 10px;
+}
+
+/* Note Description */
+.note-card p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Topics Tags */
+.note-topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.note-topics span {
+    background: rgba(0, 206, 209, 0.06);
+    color: rgba(255, 255, 255, 0.4);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 206, 209, 0.04);
+    transition: all 0.3s ease;
+}
+
+.note-card:hover .note-topics span {
+    border-color: rgba(0, 206, 209, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* View Notes Button */
+.note-card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #00ced1, #008b8b);
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.note-card button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0, 206, 209, 0.2);
+    background: linear-gradient(135deg, #00e5e8, #009999);
+}
+
+/* ========================================
+   FOOTER (Same as Home)
+   ======================================== */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 30px;
+    border-top: 1px solid rgba(0, 206, 209, 0.06);
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.footer-1st,
+.footer-2nd,
+.footer-3rd {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-1st-header,
+.footer-2nd-header,
+.footer-3rd-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00ced1;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.footer-1st-header::after,
+.footer-2nd-header::after,
+.footer-3rd-header::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #00ced1, transparent);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #00ced1;
+    padding-left: 8px;
+}
+
+.email,
+.phone {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.email:hover,
+.phone:hover {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .main-box {
+        padding: 15px;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .auth-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .notes-header h1 {
+        font-size: 30px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+        padding: 10px 0 30px;
+    }
+
+    .note-card {
+        padding: 25px 20px 30px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-1st-header::after,
+    .footer-2nd-header::after,
+    .footer-3rd-header::after {
+        margin: 8px auto 0;
+    }
+
+    .footer ul li a:hover {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    .notes-header h1 {
+        font-size: 24px;
+    }
+
+    .notes-header p {
+        font-size: 14px;
+    }
+
+    .note-icon {
+        font-size: 36px;
+    }
+
+    .note-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notes-header,
+.notes-grid,
+.footer {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.notes-grid {
+    animation-delay: 0.1s;
+}
+.footer {
+    animation-delay: 0.2s;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ced1, #008b8b);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00e5e8;
+}
