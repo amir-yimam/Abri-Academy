@@ -1,0 +1,308 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== LOGIN BOX ===== */
+.Login.box {
+    background: linear-gradient(145deg, #0a0a0a, #000000);
+    border-radius: 24px;
+    padding: 50px 45px 40px;
+    width: 440px;
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(0, 206, 209, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 206, 209, 0.08);
+    transition: all 0.4s ease;
+}
+
+.Login.box:hover {
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 1),
+        0 0 80px rgba(0, 206, 209, 0.06);
+}
+
+/* ===== TITLE ===== */
+.login-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.login-title p {
+    font-size: 34px;
+    font-weight: 700;
+    color: #00ced1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 30px rgba(0, 206, 209, 0.1);
+}
+
+.login-title p::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ced1, transparent);
+    border-radius: 2px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.login-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.login-input input {
+    padding: 17px 22px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid rgba(0, 206, 209, 0.08);
+    border-radius: 14px;
+    color: #e8e8e8;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+.login-input input::placeholder {
+    color: rgba(255, 255, 255, 0.15);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.login-input input:focus {
+    border-color: #00ced1;
+    background: rgba(0, 206, 209, 0.03);
+    box-shadow: 0 0 30px rgba(0, 206, 209, 0.04);
+    transform: translateY(-1px);
+}
+
+.login-input input:hover {
+    border-color: rgba(0, 206, 209, 0.15);
+}
+
+/* ===== REMEMBER & FORGOT SECTION ===== */
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 35px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remember:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.remember input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #00ced1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.remember label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.forgot a {
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.forgot a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00ced1;
+    transition: width 0.3s ease;
+}
+
+.forgot a:hover {
+    color: #00ced1;
+}
+
+.forgot a:hover::after {
+    width: 100%;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-button {
+    margin: 10px 0 25px;
+    width: 100%;
+}
+
+.login-button button {
+    width: 100%;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #00ced1, #008b8b);
+    color: #000000;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-button button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s ease;
+}
+
+.login-button button:hover::before {
+    left: 100%;
+}
+
+.login-button button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(0, 206, 209, 0.25);
+    background: linear-gradient(135deg, #00e5e8, #009999);
+}
+
+.login-button button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 20px rgba(0, 206, 209, 0.15);
+}
+
+/* ===== SIGNUP LINK ===== */
+.tosignup {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.tosignup a {
+    color: #00ced1;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tosignup a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00ced1;
+    transition: width 0.3s ease;
+}
+
+.tosignup a:hover {
+    color: #66fcf1;
+}
+
+.tosignup a:hover::after {
+    width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .Login.box {
+        width: 92%;
+        padding: 30px 20px 25px;
+        margin: 20px auto;
+    }
+
+    .login-title p {
+        font-size: 28px;
+    }
+
+    .login-input input {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .login-button button {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Login.box {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== GLOW EFFECT ===== */
+@keyframes glowTeal {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 206, 209, 0.02);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 206, 209, 0.05);
+    }
+}
+
+.Login.box:focus-within {
+    animation: glowTeal 3s ease-in-out infinite;
+}
